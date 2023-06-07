@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Carfy Listar Envios
+{% endblock %}
+
+{% block main %}
+<div class="row text-center">
+    <div class="col">
+        <h3>Listar Dados</h3>
+        <hr>
+    </div>
+</div>
+<div class="row">
+    <div class="col">Dados</div>
+    <div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Pedido</th>
+                    <th scope="col">Emissao</th>
+                    <th scope="col">NªNF</th>
+                    <th scope="col">Link NF</th>
+                    <th scope="col">Cliente</th>
+                    <th scope="col">Email Cliente</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for rows in values %}
+                <tr>
+                    <td>{{ rows.Pedido }}</td>
+                    <td>{{ rows.Emissao }}</td>
+
+                    <td>{{ rows.NF }}</td>
+
+                    <td>{{ rows.Link_NF }}</td>
+
+                    <td>{{ rows.Nome_Cliente }}</td>
+                    <td>{{ rows.Email_Cliente }}</td>
+
+
+
+                </tr>
+
+
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+</div>
+{% endblock %}
