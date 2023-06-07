@@ -12,32 +12,51 @@ Carfy Listar Envios
     </div>
 </div>
 <div class="row">
-    <div class="col">Dados</div>
-    <div>
+    <div class="row">
 
+
+        <form action="" method="POST">
+            <div class="mb-3 col-6 d-flex gap-3 align-items-center">
+
+                <label for="search" class="form-label">Procurar</label>
+                <input type="text" class="form-control" id="search" name="search" aria-describedby="Buscar">
+                <button class="btn btn-outline-primary">Buscar</button>
+
+            </div>
+        </form>
+
+
+        <h5 class="text-center">Dados</h5>
+    </div>
+
+    <div>
         <table class="table">
             <thead>
                 <tr>
                     <th scope="col">Pedido</th>
-                    <th scope="col">Emissao</th>
-                    <th scope="col">NªNF</th>
-                    <th scope="col">Link NF</th>
+                    <th scope="col">Emissão</th>
                     <th scope="col">Cliente</th>
-                    <th scope="col">Email Cliente</th>
+                    <th scope="col">Transportadora</th>
+                    <th scope="col">Tipo</th>
+                    <th scope="col">Rastreio</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Ações</th>
                 </tr>
             </thead>
             <tbody>
                 {% for rows in values %}
                 <tr>
-                    <td>{{ rows.Pedido }}</td>
-                    <td>{{ rows.Emissao }}</td>
+                    <td>{{ rows.Pedido }} {{ rows.0 }}</td>
+                    <td>{{ rows.Emissão }} {{ rows.1 }}</td>
 
-                    <td>{{ rows.NF }}</td>
+                    <td>{{ rows.Nome_Cliente }} {{ rows.4 }}</td>
 
-                    <td>{{ rows.Link_NF }}</td>
+                    <td>{{ rows.Transportadora }} {{ rows.6 }} </td>
 
-                    <td>{{ rows.Nome_Cliente }}</td>
-                    <td>{{ rows.Email_Cliente }}</td>
+                    <td>{{ rows.Tipo }} {{ rows.7 }}</td>
+                    <td>{{ rows.Código_Rastreio }} {{ rows.10 }}</td>
+                    <td>{{ rows.Status }} {{ rows.22 }}</td>
+                    <td><a href="">Mais Informações</a></td>
 
 
 
